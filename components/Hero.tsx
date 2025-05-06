@@ -8,75 +8,8 @@ import { type Container, type Engine } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 
 const Hero = () => {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    // This adds the bundle to tsParticles
-    // Using loadFull to load all tsParticles features
-    try {
-      await loadSlim(engine);
-    } catch (error) {
-      console.error("Error initializing tsParticles:", error);
-    }
-  }, []);
-
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      console.log(container);
-    },
-    []
-  );
-
   return (
-    <div className="pb-20 pt-36 relative">
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={{
-          fpsLimit: 60,
-          interactivity: {
-            events: {
-              onClick: { enable: true, mode: "push" },
-              onHover: { enable: true, mode: "repulse" },
-              resize: true,
-            },
-            modes: {
-              push: { quantity: 4 },
-              repulse: { distance: 200, duration: 0.4 },
-            },
-          },
-          particles: {
-            color: { value: "#ffffff" },
-            collisions: { enable: true },
-            move: {
-              direction: "none",
-              enable: true,
-              outModes: {
-                default: "bounce",
-              },
-              random: {
-                enable: false,
-              },
-              speed: 2,
-              straight: false,
-            },
-            number: {
-              density: { enable: true, area: 800 },
-              value: 30,
-            },
-            opacity: { value: 0.6 },
-            shape: { type: "circle" },
-            size: {
-              value: 3,
-              random: {
-                enable: true,
-              },
-            },
-          },
-          detectRetina: true,
-        }}
-        className="absolute top-0 left-0 w-full h-full z-0"
-      />
-
+    <>
       {/* Your existing Spotlight and content */}
       <div>
         <Spotlight
@@ -114,7 +47,7 @@ const Hero = () => {
           </a>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
