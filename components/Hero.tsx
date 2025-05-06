@@ -50,8 +50,12 @@ const Hero = () => {
             move: {
               direction: "none",
               enable: true,
-              outMode: "bounce",
-              random: false,
+              outModes: {
+                default: "bounce",
+              },
+              random: {
+                enable: false,
+              },
               speed: 2,
               straight: false,
             },
@@ -61,7 +65,12 @@ const Hero = () => {
             },
             opacity: { value: 0.6 },
             shape: { type: "circle" },
-            size: { random: true, value: 3 },
+            size: {
+              value: 3,
+              random: {
+                enable: true,
+              },
+            },
           },
           detectRetina: true,
         }}
