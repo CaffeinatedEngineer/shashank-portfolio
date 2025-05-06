@@ -2,18 +2,17 @@ import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 import { useCallback } from "react";
-import type { Engine } from "tsparticles-engine";
-import type { Container } from "tsparticles-engine";
+import { Particles } from "@tsparticles/react";
+import { type Container, type Engine } from "@tsparticles/engine";
+import { loadSlim } from "@tsparticles/slim";
 
 const Hero = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
     // This adds the bundle to tsParticles
     // Using loadFull to load all tsParticles features
     try {
-      await loadFull(engine);
+      await loadSlim(engine);
     } catch (error) {
       console.error("Error initializing tsParticles:", error);
     }
