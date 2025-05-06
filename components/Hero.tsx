@@ -8,7 +8,6 @@ import { useCallback } from "react";
 import type { Engine } from "tsparticles-engine";
 import type { Container } from "tsparticles-engine";
 
-
 const Hero = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
     // This adds the bundle to tsParticles
@@ -20,9 +19,12 @@ const Hero = () => {
     }
   }, []);
 
-  const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    console.log(container);
-  }, []);
+  const particlesLoaded = useCallback(
+    async (container: Container | undefined) => {
+      console.log(container);
+    },
+    []
+  );
 
   return (
     <div className="pb-20 pt-36 relative">
@@ -45,13 +47,6 @@ const Hero = () => {
           },
           particles: {
             color: { value: "#ffffff" },
-            links: {
-              color: "#ffffff",
-              distance: 140,
-              enable: true,
-              opacity: 0.6,
-              width: 1.1,
-            },
             collisions: { enable: true },
             move: {
               direction: "none",
@@ -76,8 +71,14 @@ const Hero = () => {
 
       {/* Your existing Spotlight and content */}
       <div>
-        <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen" fill="white" />
-        <Spotlight className="h-[80vh] w-[50vw] top-10 left-full" fill="purple" />
+        <Spotlight
+          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+          fill="white"
+        />
+        <Spotlight
+          className="h-[80vh] w-[50vw] top-10 left-full"
+          fill="purple"
+        />
         <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
       </div>
 
@@ -97,7 +98,11 @@ const Hero = () => {
           </p>
 
           <a href="#about">
-            <MagicButton title="Download Resume" icon={<FaLocationArrow />} position="right" />
+            <MagicButton
+              title="Download Resume"
+              icon={<FaLocationArrow />}
+              position="right"
+            />
           </a>
         </div>
       </div>
