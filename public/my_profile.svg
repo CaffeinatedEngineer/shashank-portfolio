@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a0845" />
+      <stop offset="100%" stop-color="#6441A5" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg-gradient)" />
+  
+  <!-- Profile silhouette -->
+  <circle cx="400" cy="230" r="120" fill="#f5f5f5" />
+  <path d="M280 450 Q400 600 520 450" fill="#f5f5f5" />
+  
+  <!-- Decorative elements -->
+  <circle cx="150" cy="150" r="50" fill="#8a2be2" opacity="0.5" />
+  <circle cx="650" cy="450" r="70" fill="#4b0082" opacity="0.6" />
+  
+  <!-- Code symbols -->
+  <text x="200" y="500" font-family="monospace" font-size="24" fill="#ffffff">&lt;/&gt;</text>
+  <text x="550" y="200" font-family="monospace" font-size="24" fill="#ffffff">{}</text>
+  
+  <!-- Abstract tech elements -->
+  <path d="M100 300 L200 320 L150 400 Z" fill="#9370db" opacity="0.7" />
+  <path d="M600 250 L700 270 L650 350 Z" fill="#9370db" opacity="0.7" />
+</svg>
